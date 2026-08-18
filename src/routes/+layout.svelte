@@ -4,7 +4,7 @@
 	const { children } = $props();
 </script>
 
-<nav class="absolute select-none flex bg-red w-full h-20">
+<nav class="fixed select-none flex bg-red w-full h-20">
 	<a href="/" class="ml-5 flex-1 flex justify-center items-center max-w-10">
 		<img src="templogo.png" 
 		alt="Rutgers Solar Car Icon">
