@@ -4,13 +4,13 @@
 	const { children } = $props();
 </script>
 
-<nav class="fixed select-none flex bg-red w-full h-20">
-	<a href="/" class="ml-5 flex-1 flex justify-center items-center max-w-10">
-		<img src="templogo.png" 
+<nav class="z-100 fixed select-none flex w-full h-20">
+	<a href="/" class="absolute ml-5 flex-1 flex justify-center items-center h-full max-w-15">
+		<img src="assets/rscicon.png" 
 		alt="Rutgers Solar Car Icon">
 	</a>
 
-	<nav class="flex-1 flex justify-center">
+	<nav class="flex-1 justify-center flex">
 		<Navlink label={"Team"} link={"/team"}></Navlink>
 		<Navlink label={"Join"} link={"/join"}></Navlink>
 		<Navlink label={"Sponsors"} link={"/sponsors"}></Navlink>
