@@ -1,2 +1,13 @@
+@import url("https://use.typekit.net/mai4uhx.css");
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
+
+@theme {
+    --font-sweetsquare: "sweet-square-pro";
+
+    --color-red: #cc1f36;
+    --color-navy: #1e3554;
+    --color-gold: #e4ad23;
+    --color-beige: #ebd8bc; 
+    --color-shadow: #081b37;
+}
