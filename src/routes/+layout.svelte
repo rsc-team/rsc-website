@@ -17,7 +17,8 @@
 		<Navlink label={"Donate"} 
 		link={"https://give.rutgersfoundation.org/rutgers-solar-car-team/20133.html"} 
 		newtab={true}
-		textcolor={"gold"}></Navlink>
+		textclass={"text-gold"}
+		></Navlink>
 	</nav>
 
 </nav>
