@@ -11,7 +11,7 @@
 <a href={link} 
    target={newtab ? "_blank" : undefined}
    rel={newtab ? "noopener noreferrer" : undefined}
-   class={`flex justify-center items-center text-center pl-3 pr-2
+   class={`flex justify-center items-center text-center pl-4 pr-4
            text-xl
            text-shadow-lg/45
            font-sweetsquare

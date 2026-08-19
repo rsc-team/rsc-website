@@ -2,14 +2,59 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 
+* {
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+
+
+    margin: 0;
+    font-family: var(--font-sweetsquare);
+}
+
 @theme {
+    /* Fonts */
     --font-sweetsquare: "sweet-square-pro", sans-serif;
 
+    /* Official RSC colors */
     --color-red: #cc1f36;
     --color-navy: #1e3554;
     --color-gold: #e4ad23;
     --color-beige: #ebd8bc; 
     --color-shadow: #081b37;
 
-    --drop-shadow-logo: -4px 4px 0px var(--color-shadow)
+    /* Other (non-branded) colors */
+    --color-light-navy: #7289a8;
+
+    /* Drop shadow */
+
+    --drop-shadow-logo: -4px 4px 0px var(--color-shadow);
+    --drop-shadow-small: -2px 2px 0px var(--color-shadow);
+
+    /* Layout Sizes */
+
+    --max-width-content: 1500px
+}
+
+@utility solar-clip-rectangle {
+    clip-path: polygon(5% 0%, 95% 0%, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0% 90%, 0% 10%);
+}
+
+@property --shadowed {
+  syntax: '<color>';
+  initial-value: rgba(0,0,0,0);
+  inherits: false;
+}
+
+@utility nav-shadow {
+    --shadowed: rgba(0,0,0,0.8);
+}
+
+#main-nav {
+    background-image: linear-gradient(var(--shadowed) 50%,transparent);
+    transition: --shadowed 0.2s
 }
