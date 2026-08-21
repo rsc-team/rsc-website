@@ -7,8 +7,7 @@
 	let nav: Element;
 
 	function onscroll(event) {
-		console.log(y);
-		if (y > 600) {
+		if (y > 200) {
 			nav.classList.add("nav-shadow");
 		} else {
 			nav.classList.remove("nav-shadow");

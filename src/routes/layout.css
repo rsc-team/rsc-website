@@ -33,11 +33,23 @@ body {
     /* Drop shadow */
 
     --drop-shadow-logo: -4px 4px 0px var(--color-shadow);
+    --drop-shadow-med: -3px 3px 0px var(--color-shadow);
     --drop-shadow-small: -2px 2px 0px var(--color-shadow);
 
     /* Layout Sizes */
 
-    --max-width-content: 1500px
+    --max-width-content: 1500px;
+
+    /* Animations */
+    --animate-scrolling: moving 20s linear infinite;
+    @keyframes moving {
+        0% { 
+            transform: translateX(0); 
+        }
+        100% { 
+            transform: translateX(-100%); 
+        }
+    }
 }
 
 @utility solar-clip-rectangle {
