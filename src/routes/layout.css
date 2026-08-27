@@ -35,19 +35,34 @@ body {
     --drop-shadow-logo: -4px 4px 0px var(--color-shadow);
     --drop-shadow-med: -3px 3px 0px var(--color-shadow);
     --drop-shadow-small: -2px 2px 0px var(--color-shadow);
+    --drop-shadow-smaller: -1px 1px 0px var(--color-shadow);
 
     /* Layout Sizes */
 
     --max-width-content: 1500px;
+    --max-width-content-expanded: 1700px;
+
+    /* Easing */
+
+    --ease-frame: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     /* Animations */
     --animate-scrolling: moving 20s linear infinite;
+    --animate-driving: driving 10s linear infinite;
     @keyframes moving {
         0% { 
             transform: translateX(0); 
         }
         100% { 
             transform: translateX(-100%); 
+        }
+    }
+    @keyframes driving {
+        0% {
+            transform: translateX(-10%);
+        }
+        100% {
+            transform: translateX(100%);
         }
     }
 }
@@ -64,6 +79,10 @@ body {
 
 @utility nav-shadow {
     --shadowed: rgba(0,0,0,0.8);
+}
+
+@utility solar-gradient {
+    background-image: radial-gradient(circle,rgba(30, 53, 84, 1) 0%, rgba(114, 137, 168, 1) 100%);
 }
 
 #main-nav {
