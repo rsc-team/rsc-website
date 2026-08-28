@@ -18,6 +18,29 @@
       {url:"/sponsors/viking.png",alt:"Rutgers School of Eningeering"}
       
    ]
+
+   // Work in progress!
+   let canvas;
+   let ctx;
+   const clipPath = [10, 0, 90, 0, 100, 10, 100, 90, 90, 100, 10, 100, 0, 90, 0, 10]
+
+   function draw(delta) {
+      ctx.globalCompositeOperation = "destination-over";
+      ctx.clearRect(0, 0, 300, 300); // clear canvas
+
+      /*ctx.fillStyle = 'white';
+      
+      ctx.fillRect(0,25,25,25);*/
+
+      window.requestAnimationFrame(draw);
+   }
+
+   $effect(()=>{
+      ctx = canvas.getContext("2d");
+
+      window.requestAnimationFrame(draw);
+   })
+
 </script>
 
 <div class="h-full w-full align-middle bg-navy">
@@ -48,7 +71,7 @@
             <p>
                Through the design, manufacturing, and testing of solar vehicles, we work on developing competitive, road-legal, fully solar-powered race cars.
             </p>
-            <a href="/team" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-70">
+            <a href="/team" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-65">
                <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
                   <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Learn More</p>
                </button>
@@ -84,7 +107,7 @@
             <a 
             target="_blank"
             rel="noopener noreferrer"
-            href="https://give.rutgersfoundation.org/rutgers-solar-car-team/20133.html" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-70">
+            href="https://give.rutgersfoundation.org/rutgers-solar-car-team/20133.html" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-65">
                <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
                   <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Donate Now</p>
                </button>
@@ -156,9 +179,9 @@
    </div>
 
    <!-- Where do we compete? -->
-   <div class="absolute w-full overflow-hidden h-200 bg-beige flex-col flex">
+   <div class="absolute w-full overflow-hidden h-250 bg-beige flex-col flex">
       <div class="absolute w-full h-full bg-no-repeat bg-position-[50%_50%]  scale-150 bg-beige bg-blend-overlay  bg-[url(/assets/brainerd.svg)]"></div>
-      <p class="w-full lg:mb-20 text-3xl lg:text-6xl justify-center text-center p-10  drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black ">
+      <p class="w-full lg:mb-20 text-4xl lg:text-6xl justify-center text-center p-10  drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black ">
          <span class="text-red">Where do we compete?</span>
       </p>
       <div class="" style="bottom:30%;width:120%">
@@ -166,30 +189,52 @@
             <div class="relative z-1 top-1/2 left-0 right-0 h-0.5 transform -translate-y-1/2 " style="background:repeating-linear-gradient(to right, #facc15 0px, #facc15 12px, transparent 12px, transparent 20px)"></div>
             <div class="h-full bg-black relative" style="width: 100%;"></div>
         </div>
-        <div class="animate-driving relative bottom-11 z-2"><img src="assets/arctanarttransflip.webp" alt="Solar Car" style="width:80px;height:auto"></div>
+        <div class="animate-driving-faster sm:animate-driving-normal relative bottom-11 z-2"><img src="assets/arctanarttransflip.webp" alt="Solar Car" style="width:80px;height:auto"></div>
       </div>
-      <div class="self-center w-full flex flex-row justify-center max-w-content">
-         <div class="w-200 flex flex-col">
-            <p class="text-4xl font-black text-red drop-shadow-small">
+      <div class="p-10 self-center w-full flex flex-col sm:flex-row justify-center max-w-content">
+         <div class="w-full flex flex-col">
+            <p class="self-center text-2xl sm:text-4xl font-black text-red drop-shadow-small">
                Rutgers Solar Car competes at Formula Sun Gran Prix (FSGP), an annual event to compete for the most amount of laps in a solar-powered vehicle.
             </p>
-            <a href="/team" class="mt-10 w-70 self-center  h-full transition-all not-hover:drop-shadow-logo xl:order-3">
-               <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 font-black  bg-red text-4xl solar-clip-rectangle">
-                  <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Learn More</p>
+            <a target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.americansolarchallenge.org/formula-sun-grand-prix/" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-65">
+               <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
+                  <p class="w-full h-full transition-all  group-hover:drop-shadow-med">FSGP Info</p>
                </button>
             </a> 
          </div>
-         <div class="transition-all ease-frame hover:rotate-6  rotate-3 drop-shadow-2xl w-75 h-75 mb-5 bg-white flex p-3">
-            <img class="w-full h-60" src="assets/solarsunset.webp" alt="lol">
+         <div class="relative z-1 self-center min-w-75 transition-all ease-frame hover:rotate-6  rotate-3 drop-shadow-1xl w-75 h-75 mb-5 bg-white flex p-3">
+            <img class="min-w-full w-full h-60" src="assets/solarsunset.webp" alt="lol">
          </div>
       </div>
-      
-
-      
-
-      
-
    </div>
-   
+
+   <!-- Contact -->
+   <div class=" overflow-hidden drop-shadow-2xl mt-140 solar-gradient sphere-mask  h-200">
+      <!-- Solar panels -->
+      <canvas bind:this={canvas} class="absolute h-full w-full"></canvas>
+      <!-- Content -->
+      <div class="z-2 pt-70 p-5 max-w-content m-auto drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black">
+         <p class="w-full mb-5 text-7xl lg:text-7xl justify-center text-center p-10">
+            <span class="text-white">Contact Us</span>
+         </p>
+         <p class="text-center text-2xl sm:text-4xl max-w-200 m-auto">
+            We're happy to answer any questions you may have about the team.
+         </p>
+      </div>
+   </div>
+
+   <!-- Join Team -->
+    <div class="overflow-hidden h-50  bg-navy place-content-center flex drop-shadow-lg justify-center">
+      <div class="text-2sm sm:text-2xl lg:text-4xl flex max-w-content self-center font-black p-5 lg:p-20  text-white text-left drop-shadow-med">
+         <p class="text-gold">Are you a student at Rutgers University? Help us design, build, and race the next generation of solar-powered vehicles!</p>
+         <a href="/join" class="h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center ml-3  min-w-65">
+               <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
+                  <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Next Steps</p>
+               </button>
+            </a> 
+      </div>
+   </div>
 
  </div>
