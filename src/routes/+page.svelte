@@ -51,9 +51,9 @@
       <video class="absolute user-none w-full h-full object-cover brightness-50 overflow-hidden" autoplay muted loop>
          <source src="assets/tempbg.mp4" type="video/mp4">
       </video>
-      <div class="relative max-w-content justify-center z-2 w-auto top-[50%] translate-y-[-50%] lg:translate-y-[-50%] mx-auto">
+      <div class="solar-left-corner flex  h-full  w-full absolute max-w-content align-middle  justify-center z-2  top-[50%] translate-y-[-50%] lg:translate-y-[-50%] m-auto">
          <img class="hidden" src="assets/rscsplash.png" alt="Rutgers Solar Car Logo">
-         <p class="text-center  text-red font-sweetsquare font-black drop-shadow-logo text-4xl lg:text-5xl sm:text-5xl ">
+         <p class="self-center text-center  text-red font-sweetsquare font-black drop-shadow-logo text-4xl lg:text-5xl sm:text-5xl ">
             Making fast, sustainable, solar-powered cars
          </p>
       </div>
@@ -61,10 +61,10 @@
 
 
    <!-- About the team -->
-   <div class="drop-shadow-lg items-center  overflow-hidden w-full h-250 xl:h-200  bg-gray-600 bg-[url(/assets/sidgrind.webp)]  bg-blend-multiply  bg-position-[13%_70%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]  flex flex-col justify-center">
-      <div class="flex items-center align-middle mt-50 lg:-mt-20 flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
-         <img src="assets/sun.webp" alt="Rutgers Solar Car Sun" class="relative top-20 sm:static  xl:static self-center  w-100 h-100">
-         <div class="w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center mt-20 justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
+   <div class="drop-shadow-lg items-center overflow-hidden w-full h-250 xl:h-200  bg-gray-600 bg-[url(/assets/sidgrind.webp)]  bg-blend-multiply  bg-position-[13%_70%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]">
+      <div class="solar-right-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
+         <img src="assets/sun.webp" alt="Rutgers Solar Car Sun" class="relative sm:static  xl:static self-center  w-100 h-100">
+         <div class="w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center  justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
             <p class="pb-15">
                <span class="text-red">Rutgers Solar Car</span> is a nonprofit, passionate, student-led organization committed to advancing innovation, sustainability, and collaboration in solar-powered vehicle development
             </p>
@@ -96,8 +96,8 @@
 
    <!-- Sponsor Blurb -->
     <div class="border-none drop-shadow-lg items-center overflow-hidden w-full h-250 xl:h-200  bg-gray-600 bg-[url(/assets/spacemain.webp)]  bg-blend-multiply bg-auto  bg-position-[50%_50%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]  flex flex-col justify-center">
-      <div class="flex items-center align-middle mt-50 lg:-mt-20 flex-nowrap  flex-col lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
-         <div class="w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center mt-20 justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
+      <div class="solar-top-right-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
+         <div class="w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
             <p class="pb-15">
                Our team provides students with a hands-on, inclusive learning environment where they can exercise creative freedom while pushing the boundaries of automotive design and technology.
             </p>
@@ -119,6 +119,7 @@
 
    <!-- What is Solar Racing? -->
    <div class="flex flex-col sm:flex-row justify-center border-none drop-shadow-lg items-center overflow-hidden w-full h-300 sm:h-300 lg:h-400  bg-gray-600 bg-[url(/assets/solarsunset.webp)]  bg-blend-multiply bg-auto  bg-position-[60%_50%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]">
+         
          <!-- Frames left -->
             <div class="relative drop-shadow-2xl lg:-mt-100">
                {#each {length:3} as _,i}
@@ -129,6 +130,9 @@
                {/each}
             </div>
          <!----------------->
+      <div class="w-full h-full">
+            
+      
       <div class="drop-shadow-small lg:drop-shadow-med max-w-content flex flex-col h-full  text-lg xl:text-3xl sm:text-2xl justify-center text-center  text-white font-sweetsquare font-black">
          <p class="w-full lg:mb-20 text-3xl lg:text-6xl justify-center text-center p-10  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
             What is <span class="text-red">Solar Racing?</span>
@@ -155,7 +159,7 @@
             </p>
          </div>
 
-         
+         </div>
       </div>
 
       <!-- Frames right -->
@@ -217,7 +221,7 @@
       <!-- Content -->
       <div class="z-2 pt-70 p-5 max-w-content m-auto drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black">
          <p class="w-full mb-5 text-7xl lg:text-7xl justify-center text-center p-10">
-            <span class="text-white">Contact Us</span>
+            Contact Us
          </p>
          <p class="text-center text-2xl sm:text-4xl max-w-200 m-auto">
             We're happy to answer any questions you may have about the team.
