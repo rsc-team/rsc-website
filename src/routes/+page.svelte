@@ -62,9 +62,9 @@
 
    <!-- About the team -->
    <div class=" items-center overflow-hidden w-full h-200 xl:h-200  bg-gray-600 bg-[url(/assets/sidgrind.webp)]  bg-blend-multiply  bg-position-[13%_70%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]">
-      <div class=" solar-right-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
-         <img src="assets/sun.webp" alt="Rutgers Solar Car Sun" class="absolute -bottom-50 lg:static  xl:static self-center  w-100 h-100">
-         <div class="-mt-50 lg:mt-0 w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center  justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
+      <div class="mt-30 lg:mt-0 solar-right-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
+         <img src="assets/sun.webp" alt="Rutgers Solar Car Sun" class="relative  lg:static  xl:static self-center  w-100 h-100">
+         <div class=" w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center  justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
             <p class="pb-15">
                <span class="text-red">Rutgers Solar Car</span> is a nonprofit, passionate, student-led organization committed to advancing innovation, sustainability, and collaboration in solar-powered vehicle development
             </p>
@@ -72,7 +72,7 @@
                Through the design, manufacturing, and testing of solar vehicles, we work on developing competitive, road-legal, fully solar-powered race cars.
             </p>
             <a href="/team" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-65">
-               <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
+               <button class=" hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
                   <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Learn More</p>
                </button>
             </a> 
@@ -108,12 +108,12 @@
             target="_blank"
             rel="noopener noreferrer"
             href="https://give.rutgersfoundation.org/rutgers-solar-car-team/20133.html" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-65">
-               <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
+               <button class=" hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
                   <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Donate Now</p>
                </button>
             </a> 
          </div>
-         <img src="assets/solarlogo.svg" alt="Rutgers Solar Car Sun" class="absolute -bottom-50  lg:static  xl:static self-center  w-100 h-100">
+         <img src="assets/solarlogo.svg" alt="Rutgers Solar Car Sun" class="absolute -bottom-55  lg:static  xl:static self-center  w-100 h-100">
       </div>
    </div>
 
@@ -203,7 +203,7 @@
             <a target="_blank"
             rel="noopener noreferrer"
             href="https://www.americansolarchallenge.org/formula-sun-grand-prix/" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-65">
-               <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
+               <button class=" hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
                   <p class="w-full h-full transition-all  group-hover:drop-shadow-med">FSGP Info</p>
                </button>
             </a> 
@@ -215,11 +215,11 @@
    </div>
 
    <!-- Contact -->
-   <div class=" overflow-hidden drop-shadow-2xl mt-140 solar-gradient sphere-mask  h-200">
+   <div class=" overflow-hidden drop-shadow-2xl mt-140 solar-gradient sphere-mask h-150 sm:h-200">
       <!-- Solar panels -->
       <canvas bind:this={canvas} class="absolute h-full w-full"></canvas>
       <!-- Content -->
-      <div class="z-2 pt-70 p-5 max-w-content m-auto drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black">
+      <div class="z-2 pt-45 sm:pt-70 p-5 max-w-content m-auto drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black">
          <p class="w-full mb-0 sm;mb-5 text-5xl lg:text-7xl justify-center text-center p-10">
             Contact Us
          </p>
@@ -231,16 +231,22 @@
             <a 
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.linkedin.com/company/rusolarcarteam" class="mr-5 cursor-pointer transition-all hover:bg-white solar-clip-square w-35 h-35 bg-transparent-white ">
-               <img draggable="false" class="transition-all hover:invert-100 select-none  p-7 m-auto mt-1" src="social/linkedin.png" alt="Linkedin">
+            href="https://www.linkedin.com/company/rusolarcarteam" class="mr-5 cursor-pointer transition-all hover:bg-white solar-clip-square w-20 h-20 sm:w-35 sm:h-35 bg-transparent-white ">
+               <img draggable="false" class="relative left-0.5 hover:invert-100 select-none p-3.5 sm:p-7 m-auto mt-1" src="social/linkedin.png" alt="Linkedin">
             </a>
 
             <!-- Instagram -->
             <a 
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/rusolarcar" class="mr-5  cursor-pointer transition-all hover:bg-white solar-clip-square w-35 h-35 bg-transparent-white ">
-               <img draggable="false" class="relative right-0.55 transition-all hover:invert-100 select-none  p-7  m-auto " src="social/instagram.svg" alt="Linkedin">
+            href="https://www.instagram.com/rusolarcar" class="mr-5  cursor-pointer transition-all hover:bg-white solar-clip-square w-20 h-20  sm:w-35 sm:h-35 bg-transparent-white ">
+               <img draggable="false" class="relative right-0.55 hover:invert-100 select-none  p-3.5 sm:p-7  m-auto " src="social/instagram.svg" alt="Instagram">
+            </a>
+
+            <!-- Email -->
+            <a 
+            href="mailto:rusolarcarclub@gmail.com" class="mr-5  cursor-pointer transition-all hover:bg-white solar-clip-square w-20 h-20  sm:w-35 sm:h-35 bg-transparent-white ">
+               <img draggable="false" class="relative hover:invert-100 select-none  p-3.5 sm:p-4  m-auto " src="social/email.svg" alt="Email">
             </a>
             
          </div>
@@ -252,7 +258,7 @@
       <div class="text-xl sm:text-2xl lg:text-4xl flex flex-col sm:flex-row max-w-content self-center font-black p-5 lg:p-20  text-white text-left drop-shadow-med">
          <p class="text-gold text-center sm:ml-5 sm:text-left">Are you a student at Rutgers University? Help us design, build, and race the next generation of solar-powered vehicles!</p>
          <a href="/join" class="mt-2 mb-8 sm:mt-0 sm:mb-0 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center ml-3  min-w-65">
-               <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
+               <button class=" hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
                   <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Next Steps</p>
                </button>
             </a> 
