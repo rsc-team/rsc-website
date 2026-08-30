@@ -29,6 +29,7 @@ body {
 
     /* Other (non-branded) colors */
     --color-light-navy: #7289a8;
+    --color-transparent-white: rgba(133,160,196,0.75);
 
     /* Drop shadow */
 

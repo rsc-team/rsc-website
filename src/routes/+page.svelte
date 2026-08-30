@@ -61,10 +61,10 @@
 
 
    <!-- About the team -->
-   <div class="drop-shadow-lg items-center overflow-hidden w-full h-250 xl:h-200  bg-gray-600 bg-[url(/assets/sidgrind.webp)]  bg-blend-multiply  bg-position-[13%_70%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]">
-      <div class="solar-right-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
-         <img src="assets/sun.webp" alt="Rutgers Solar Car Sun" class="relative sm:static  xl:static self-center  w-100 h-100">
-         <div class="w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center  justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
+   <div class=" items-center overflow-hidden w-full h-200 xl:h-200  bg-gray-600 bg-[url(/assets/sidgrind.webp)]  bg-blend-multiply  bg-position-[13%_70%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]">
+      <div class=" solar-right-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
+         <img src="assets/sun.webp" alt="Rutgers Solar Car Sun" class="absolute -bottom-50 lg:static  xl:static self-center  w-100 h-100">
+         <div class="-mt-50 lg:mt-0 w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center  justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
             <p class="pb-15">
                <span class="text-red">Rutgers Solar Car</span> is a nonprofit, passionate, student-led organization committed to advancing innovation, sustainability, and collaboration in solar-powered vehicle development
             </p>
@@ -95,9 +95,9 @@
    </div>
 
    <!-- Sponsor Blurb -->
-    <div class="border-none drop-shadow-lg items-center overflow-hidden w-full h-250 xl:h-200  bg-gray-600 bg-[url(/assets/spacemain.webp)]  bg-blend-multiply bg-auto  bg-position-[50%_50%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]  flex flex-col justify-center">
-      <div class="solar-top-right-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
-         <div class="w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
+    <div class="border-none drop-shadow-lg items-center overflow-hidden w-full h-200 xl:h-200  bg-gray-600 bg-[url(/assets/spacemain.webp)]  bg-blend-multiply bg-auto  bg-position-[50%_50%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]  flex flex-col justify-center">
+      <div class="solar-left-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
+         <div class="-mt-30 lg:mt-0 w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
             <p class="pb-15">
                Our team provides students with a hands-on, inclusive learning environment where they can exercise creative freedom while pushing the boundaries of automotive design and technology.
             </p>
@@ -113,13 +113,13 @@
                </button>
             </a> 
          </div>
-         <img src="assets/solarlogo.svg" alt="Rutgers Solar Car Sun" class="relative  sm:static  xl:static self-center  w-100 h-100">
+         <img src="assets/solarlogo.svg" alt="Rutgers Solar Car Sun" class="absolute -bottom-50  lg:static  xl:static self-center  w-100 h-100">
       </div>
    </div>
 
    <!-- What is Solar Racing? -->
    <div class="flex flex-col sm:flex-row justify-center border-none drop-shadow-lg items-center overflow-hidden w-full h-300 sm:h-300 lg:h-400  bg-gray-600 bg-[url(/assets/solarsunset.webp)]  bg-blend-multiply bg-auto  bg-position-[60%_50%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]">
-         
+         <div class="absolute w-full h-full solar-right-corner"></div>
          <!-- Frames left -->
             <div class="relative drop-shadow-2xl lg:-mt-100">
                {#each {length:3} as _,i}
@@ -195,7 +195,7 @@
         </div>
         <div class="animate-driving-faster sm:animate-driving-normal relative bottom-11 z-2"><img src="assets/arctanarttransflip.webp" alt="Solar Car" style="width:80px;height:auto"></div>
       </div>
-      <div class="p-10 self-center w-full flex flex-col sm:flex-row justify-center max-w-content">
+      <div class="-mt-15 sm:-mt-5 p-10 self-center w-full flex flex-col sm:flex-row justify-center max-w-content">
          <div class="w-full flex flex-col">
             <p class="self-center text-2xl sm:text-4xl font-black text-red drop-shadow-small">
                Rutgers Solar Car competes at Formula Sun Gran Prix (FSGP), an annual event to compete for the most amount of laps in a solar-powered vehicle.
@@ -208,7 +208,7 @@
                </button>
             </a> 
          </div>
-         <div class="relative z-1 self-center min-w-75 transition-all ease-frame hover:rotate-6  rotate-3 drop-shadow-1xl w-75 h-75 mb-5 bg-white flex p-3">
+         <div class="relative top-15 sm:top-0 z-0 sm:z-1 self-center min-w-75 transition-all ease-frame hover:rotate-6  rotate-3 drop-shadow-1xl w-75 h-75 mb-5 bg-white flex p-3">
             <img class="min-w-full w-full h-60" src="assets/solarsunset.webp" alt="lol">
          </div>
       </div>
@@ -220,20 +220,38 @@
       <canvas bind:this={canvas} class="absolute h-full w-full"></canvas>
       <!-- Content -->
       <div class="z-2 pt-70 p-5 max-w-content m-auto drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black">
-         <p class="w-full mb-5 text-7xl lg:text-7xl justify-center text-center p-10">
+         <p class="w-full mb-0 sm;mb-5 text-5xl lg:text-7xl justify-center text-center p-10">
             Contact Us
          </p>
          <p class="text-center text-2xl sm:text-4xl max-w-200 m-auto">
             We're happy to answer any questions you may have about the team.
          </p>
+         <div class="flex justify-center mt-10">
+            <!-- LinkedIn -->
+            <a 
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/company/rusolarcarteam" class="mr-5 cursor-pointer transition-all hover:bg-white solar-clip-square w-35 h-35 bg-transparent-white ">
+               <img draggable="false" class="transition-all hover:invert-100 select-none  p-7 m-auto mt-1" src="social/linkedin.png" alt="Linkedin">
+            </a>
+
+            <!-- Instagram -->
+            <a 
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/rusolarcar" class="mr-5  cursor-pointer transition-all hover:bg-white solar-clip-square w-35 h-35 bg-transparent-white ">
+               <img draggable="false" class="relative right-0.55 transition-all hover:invert-100 select-none  p-7  m-auto " src="social/instagram.svg" alt="Linkedin">
+            </a>
+            
+         </div>
       </div>
    </div>
 
    <!-- Join Team -->
     <div class="overflow-hidden h-50  bg-navy place-content-center flex drop-shadow-lg justify-center">
-      <div class="text-2sm sm:text-2xl lg:text-4xl flex max-w-content self-center font-black p-5 lg:p-20  text-white text-left drop-shadow-med">
-         <p class="text-gold">Are you a student at Rutgers University? Help us design, build, and race the next generation of solar-powered vehicles!</p>
-         <a href="/join" class="h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center ml-3  min-w-65">
+      <div class="text-xl sm:text-2xl lg:text-4xl flex flex-col sm:flex-row max-w-content self-center font-black p-5 lg:p-20  text-white text-left drop-shadow-med">
+         <p class="text-gold text-center sm:ml-5 sm:text-left">Are you a student at Rutgers University? Help us design, build, and race the next generation of solar-powered vehicles!</p>
+         <a href="/join" class="mt-2 mb-8 sm:mt-0 sm:mb-0 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center ml-3  min-w-65">
                <button class="transition-all hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
                   <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Next Steps</p>
                </button>
