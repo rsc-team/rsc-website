@@ -1,22 +1,25 @@
 <script>
    let sponsors = [
-      {url:"/sponsors/rusoe.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/airtech.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/badger.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/bayarea.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/climate.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/endurans.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/gobain.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/gs.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/komo.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/lockheed.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/maxeon.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/mrg.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/pcbway.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/pmc.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/tripower.png",alt:"Rutgers School of Eningeering"},
-      {url:"/sponsors/viking.png",alt:"Rutgers School of Eningeering"}
-      
+      {url:"/sponsors/ansys.svg",alt:"Ansys"},
+      {url:"/sponsors/generalsealants.svg",alt:"General Sealants"},
+      {url:"/sponsors/tripowerdesign.svg",alt:"Tri-Power Design"},
+      {url:"/sponsors/sunpower.svg",alt:"Sunpower"},
+      {url:"/sponsors/mrgworkshop.svg",alt:"Mr. G's Workshop"},
+      {url:"/sponsors/panasonic.svg",alt:"Panasonic"},
+      {url:"/sponsors/badgermedalmachinefabrication.svg",alt:"Badger Medal & Machine Fabrication"},
+      {url:"/sponsors/polyurethanemachinerycorperation.svg",alt:"Polyurethane Machinery Corperation"},
+      {url:"/sponsors/vikingyachts.svg",alt:"Viking Yachts"},
+      {url:"/sponsors/komo.svg",alt:"Komo"},
+      {url:"/sponsors/rutgerssoe.svg",alt:"Rutgers School of Engineering"}
+   ]
+
+   let collage = [
+      {url:"/collage/collage1.webp",alt:"Hyperion under construction"},
+      {url:"/collage/collage2.webp",alt:"Wiring electrical components"},
+      {url:"/collage/collage3.webp",alt:"Steering Hyperion"},
+      {url:"/collage/collage4.webp",alt:"Exiting Hyperion"},
+      {url:"/collage/collage6.webp",alt:"Hyperion"},
+      {url:"/collage/collage7.webp",alt:"Hyperion without canopy"}
    ]
 
    // Work in progress!
@@ -46,12 +49,13 @@
 <div class="h-full w-full align-middle bg-navy">
 
    <!-- Logo/Welcome Screen -->
-   <div class="relative w-full h-150 lg:h-200 drop-shadow-lg">
+   <div class="flex justify-center relative w-full h-150 lg:h-200 drop-shadow-lg">
+      <div class="absolute z-3 w-full h-full solar-left-corner"></div>
       <div class="absolute z-2 user-none w-full h-full max-w-content"> </div>
-      <video class="absolute user-none w-full h-full object-cover brightness-50 overflow-hidden" autoplay muted loop>
-         <source src="assets/tempbg.mp4" type="video/mp4">
+      <video preload="metadata" class="absolute user-none w-full h-full object-cover brightness-50 overflow-hidden" autoplay muted loop>
+         <source src="assets/solarsiteloop.webm" type="video/webm">
       </video>
-      <div class="solar-left-corner flex  h-full  w-full absolute max-w-content align-middle  justify-center z-2  top-[50%] translate-y-[-50%] lg:translate-y-[-50%] m-auto">
+      <div class="absolute z-4 flex  h-full  w-full absolute max-w-content align-middle justify-center z-2  top-[50%] translate-y-[-50%] lg:translate-y-[-50%] m-auto">
          <img class="hidden" src="assets/rscsplash.png" alt="Rutgers Solar Car Logo">
          <p class="self-center text-center  text-red font-sweetsquare font-black drop-shadow-logo text-4xl lg:text-5xl sm:text-5xl ">
             Making fast, sustainable, solar-powered cars
@@ -61,10 +65,11 @@
 
 
    <!-- About the team -->
-   <div class=" items-center overflow-hidden w-full h-200 xl:h-200  bg-gray-600 bg-[url(/assets/sidgrind.webp)]  bg-blend-multiply  bg-position-[13%_70%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]">
-      <div class="mt-30 lg:mt-0 solar-right-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
-         <img src="assets/sun.webp" alt="Rutgers Solar Car Sun" class="relative  lg:static  xl:static self-center  w-100 h-100">
-         <div class=" w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center  justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
+   <div class="relative flex justify-center items-center  w-full h-200 xl:h-200  bg-gray-600 bg-[url(/assets/sidgrind.webp)]  bg-blend-multiply  bg-position-[13%_70%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]">
+      <div class="relative z-3 w-full h-full solar-right-corner"></div>
+      <div class=" self-start lg:self-center overflow-hidden absolute z-4 flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
+      <img src="assets/sun.webp" alt="Rutgers Solar Car Sun" class="absolute -bottom-55  lg:static  xl:static self-center  w-100 h-100">
+         <div class="-mt-50 lg:mt-0  w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center  justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
             <p class="pb-15">
                <span class="text-red">Rutgers Solar Car</span> is a nonprofit, passionate, student-led organization committed to advancing innovation, sustainability, and collaboration in solar-powered vehicle development
             </p>
@@ -96,8 +101,9 @@
 
    <!-- Sponsor Blurb -->
     <div class="border-none drop-shadow-lg items-center overflow-hidden w-full h-200 xl:h-200  bg-gray-600 bg-[url(/assets/spacemain.webp)]  bg-blend-multiply bg-auto  bg-position-[50%_50%] bg-no-repeat lg:bg-position-[20%_75%] xl:bg-cover xl:bg-position-[20%_95%] 2xl:bg-position[20%_10%]  flex flex-col justify-center">
-      <div class="solar-left-corner flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
-         <div class="-mt-30 lg:mt-0 w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
+    <div class="absolute z-0 w-full h-full solar-left-corner"></div>
+      <div class="flex items-center align-middle flex-nowrap  flex-col-reverse lg:flex-row xl:pr-25 h-full w-full xl:max-w-content justify-center">
+         <div class="-mt-50 lg:mt-0 w-full text-xl xl:text-4xl sm:text-3xl flex flex-col self-center justify-center text-left p-10 xl:w-200 sm:w-150  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
             <p class="pb-15">
                Our team provides students with a hands-on, inclusive learning environment where they can exercise creative freedom while pushing the boundaries of automotive design and technology.
             </p>
@@ -113,7 +119,7 @@
                </button>
             </a> 
          </div>
-         <img src="assets/solarlogo.svg" alt="Rutgers Solar Car Sun" class="absolute -bottom-55  lg:static  xl:static self-center  w-100 h-100">
+         <img src="assets/solarlogo.svg" alt="Rutgers Solar Car Sun" class="absolute -bottom-45  lg:static  xl:static self-center  w-100 h-100">
       </div>
    </div>
 
@@ -125,14 +131,13 @@
                {#each {length:3} as _,i}
                   <div class="transition-all ease-frame {i%2==0 ? "hover:-rotate-6" : "hover:rotate-6"}  {i%2==0 ? "-rotate-3" : "rotate-3"} drop-shadow-2xl w-75 h-75 mb-5 ml-{i%2==0 ? 10 : 0} bg-white flex p-3">
                      <img class="w-full h-60"
-                     src="assets/solarsunset.webp" alt="lol">
+                     src={collage[i].url} alt={collage[i].alt}>
                   </div>
                {/each}
             </div>
          <!----------------->
-      <div class="w-full h-full">
-            
       
+            
       <div class="drop-shadow-small lg:drop-shadow-med max-w-content flex flex-col h-full  text-lg xl:text-3xl sm:text-2xl justify-center text-center  text-white font-sweetsquare font-black">
          <p class="w-full lg:mb-20 text-3xl lg:text-6xl justify-center text-center p-10  drop-shadow-small lg:drop-shadow-med  text-white font-sweetsquare font-black ">
             What is <span class="text-red">Solar Racing?</span>
@@ -160,14 +165,14 @@
          </div>
 
          </div>
-      </div>
+      
 
       <!-- Frames right -->
             <div class="mt-10 lg:mt-100 relative drop-shadow-2xl">
                {#each {length:3} as _,i}
                   <div class="transition-all ease-frame  {i%2==0 ? "hover:rotate-6" : "hover:-rotate-6"} {i%2==0 ? "rotate-3" : "-rotate-3"} drop-shadow-2xl w-75 h-75 mb-5  ml-{i==1 ? 10 : 0}  bg-white flex p-3">
                      <img class="w-full h-60"
-                     src="assets/solarsunset.webp" alt="lol">
+                     src={collage[i+(collage.length/2)].url} alt={collage[i*2].alt}>
                   </div>
                {/each}
             </div>
@@ -209,7 +214,7 @@
             </a> 
          </div>
          <div class="relative top-15 sm:top-0 z-0 sm:z-1 self-center min-w-75 transition-all ease-frame hover:rotate-6  rotate-3 drop-shadow-1xl w-75 h-75 mb-5 bg-white flex p-3">
-            <img class="min-w-full w-full h-60" src="assets/solarsunset.webp" alt="lol">
+            <img class="min-w-full w-full h-60" src="collage/collage5.webp" alt="Hyperion">
          </div>
       </div>
    </div>
@@ -245,7 +250,7 @@
 
             <!-- Email -->
             <a 
-            href="mailto:rusolarcarclub@gmail.com" class="mr-5  cursor-pointer transition-all hover:bg-white solar-clip-square w-20 h-20  sm:w-35 sm:h-35 bg-transparent-white ">
+            href="mailto:rusolarcarclub@gmail.com" class="  cursor-pointer transition-all hover:bg-white solar-clip-square w-20 h-20  sm:w-35 sm:h-35 bg-transparent-white ">
                <img draggable="false" class="relative hover:invert-100 select-none  p-3.5 sm:p-4  m-auto " src="social/email.svg" alt="Email">
             </a>
             
