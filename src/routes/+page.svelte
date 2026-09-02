@@ -1,4 +1,6 @@
 <script>
+    import { createContext } from "svelte";
+
    let sponsors = [
       {url:"/sponsors/ansys.svg",alt:"Ansys"},
       {url:"/sponsors/generalsealants.svg",alt:"General Sealants"},
@@ -23,23 +25,73 @@
    ]
 
    // Work in progress!
+   let contactDiv;
    let canvas;
    let ctx;
-   const clipPath = [10, 0, 90, 0, 100, 10, 100, 90, 90, 100, 10, 100, 0, 90, 0, 10]
+
+   const canvasResScale = 1;
+   const cellSize = 100;
+   const cellPadding = 5;
+   const cellInset = 15;
+   const cellOuterColor = "rgba(30,53,84,1)";
+   const cellInnerColor = "rgba(114,137,168,1)";
+
+   let solarPath = `M 0,${cellInset} ${cellInset},0 H ${cellSize-cellInset} L ${cellSize},${cellInset} V ${cellSize-cellInset} L ${cellSize-cellInset},${cellSize} H ${cellInset} L 0,${cellSize-cellInset} Z`;
+   let solarPath2D = new Path2D(solarPath);
 
    function draw(delta) {
+      canvas.height = contactDiv.offsetHeight * canvasResScale;
+      canvas.width = contactDiv.offsetWidth * canvasResScale;
+      canvas.style.height = contactDiv.offsetHeight;
+      canvas.style.width = contactDiv.offsetWidth;
+      
       ctx.globalCompositeOperation = "destination-over";
       ctx.clearRect(0, 0, 300, 300); // clear canvas
 
-      /*ctx.fillStyle = 'white';
-      
-      ctx.fillRect(0,25,25,25);*/
+      //makeSolarPanel(2,2,200,500);
 
       window.requestAnimationFrame(draw);
    }
 
+   function drawSolarCell(x,y) {
+      ctx.fillStyle = cellInnerColor;
+      ctx.beginPath();
+
+      ctx.moveTo(x+cellInset,y); // starting position (top left corner)
+      ctx.lineTo(x+cellInset+cellSize,y);  // top right edge
+      ctx.lineTo(x+(cellInset*2)+cellSize,y+cellInset); // top right inset
+      ctx.lineTo(x+(cellInset*2)+cellSize,y+cellInset+cellSize); // bottom right edge
+      ctx.lineTo(x+(cellInset)+cellSize,y+(cellInset*2)+cellSize); // bottom right inset
+      ctx.lineTo(x+cellInset, y+(cellInset*2)+cellSize); // bottom left edge
+      ctx.lineTo(x, y+cellInset+cellSize); // bottom left inset
+      ctx.lineTo(x,y+cellInset); // top left edge
+      ctx.lineTo(x+cellInset,y); // top left inset (ending position)
+
+      ctx.fill();
+   }
+   
+   function makeSolarPanel(r,c,x,y) {
+      x = x * canvasResScale;
+      y = y * canvasResScale;
+
+      let panelWidth = (c * (cellSize + (cellInset*2) + cellPadding)) + cellPadding;
+      let panelHeight = (r * (cellSize + (cellInset*2) + cellPadding)) + cellPadding;
+
+      // render cells
+      for (let i = 0; i < r; ++i) {
+         for (let j = 0; j < c; ++j) {
+            drawSolarCell(x+cellPadding + ((cellSize+(cellInset*2)+(cellPadding))*j),y+cellPadding + ((cellSize+(cellInset*2)+(cellPadding))*i));
+         }
+      }
+
+      // render a square
+      ctx.fillStyle = cellOuterColor;
+      ctx.fillRect(x, y, panelWidth, panelHeight);
+   }
+
    $effect(()=>{
       ctx = canvas.getContext("2d");
+      canvas.imageSmoothingEnabled = false;
 
       window.requestAnimationFrame(draw);
    })
@@ -220,9 +272,9 @@
    </div>
 
    <!-- Contact -->
-   <div class=" overflow-hidden drop-shadow-2xl mt-140 solar-gradient sphere-mask h-150 sm:h-200">
+   <div bind:this={contactDiv} class="overflow-hidden drop-shadow-2xl mt-140 solar-gradient sphere-mask h-150 sm:h-200">
       <!-- Solar panels -->
-      <canvas bind:this={canvas} class="absolute h-full w-full"></canvas>
+      <canvas bind:this={canvas} class="absolute h-full w-full canvas-rendering"></canvas>
       <!-- Content -->
       <div class="z-2 pt-45 sm:pt-70 p-5 max-w-content m-auto drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black">
          <p class="w-full mb-0 sm;mb-5 text-5xl lg:text-7xl justify-center text-center p-10">

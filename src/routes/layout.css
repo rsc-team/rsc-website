@@ -107,6 +107,12 @@ body {
     background-image: linear-gradient(80deg,var(--color-navy) 0%, var(--color-light-navy) 100%);
 }
 
+@utility canvas-rendering {
+    
+    width: 100%;
+    height: 100%;
+}
+
 @utility fade-out-div {
     --mask: linear-gradient(to top, 
       rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 40%, 
