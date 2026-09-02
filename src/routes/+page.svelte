@@ -1,5 +1,5 @@
-<script>
-    import { createContext } from "svelte";
+<script lang="ts">
+    import { createContext, createRawSnippet } from "svelte";
 
    let sponsors = [
       {url:"/sponsors/ansys.svg",alt:"Ansys"},
@@ -25,75 +25,129 @@
    ]
 
    // Work in progress!
-   let contactDiv;
-   let canvas;
-   let ctx;
+   let contactDiv : HTMLDivElement;
+   let canvas : HTMLCanvasElement | null;
+   let ctx : CanvasRenderingContext2D | null;
 
-   const canvasResScale = 1;
+   const canvasResScale = 2; // canvas resolution (1 - computed layout of contact div, 2 - twice as large, 0.5 - half as large)
    const cellSize = 100;
    const cellPadding = 5;
    const cellInset = 15;
-   const cellOuterColor = "rgba(30,53,84,1)";
-   const cellInnerColor = "rgba(114,137,168,1)";
+   const cellOuterColor = "rgba(30,53,84,0.4)";
+   const cellInnerColor = "rgba(114,137,168,0.8)";
 
-   let solarPath = `M 0,${cellInset} ${cellInset},0 H ${cellSize-cellInset} L ${cellSize},${cellInset} V ${cellSize-cellInset} L ${cellSize-cellInset},${cellSize} H ${cellInset} L 0,${cellSize-cellInset} Z`;
-   let solarPath2D = new Path2D(solarPath);
+   const maxRow = 3;
+   const maxCol = 2;
 
-   function draw(delta) {
+   const incPerFrame = 0.5;
+
+   // [ [r,c,x,y,a] ]
+   let panels : number[][] = [];
+
+   let currentStarter = 0;
+   let startingCorners = [0, 0.2, 0.4, 0.6, 0.8, 1];
+
+   function draw(delta : number) {
+      if (!canvas || !ctx) { return }
+
       canvas.height = contactDiv.offsetHeight * canvasResScale;
       canvas.width = contactDiv.offsetWidth * canvasResScale;
-      canvas.style.height = contactDiv.offsetHeight;
-      canvas.style.width = contactDiv.offsetWidth;
+      canvas.style.height = contactDiv.offsetHeight.toString() +"px";
+      canvas.style.width = contactDiv.offsetWidth.toString() +"px";
       
       ctx.globalCompositeOperation = "destination-over";
       ctx.clearRect(0, 0, 300, 300); // clear canvas
 
-      //makeSolarPanel(2,2,200,500);
+      ctx.rotate((45 * Math.PI) / 180);
+      ctx.translate(10,-800)
+
+      // draw panels
+      for (let i = 0; i < panels.length; ++i) {
+         let curr = panels[i];
+         panels[i] = [curr[0], curr[1], curr[2], curr[3]-incPerFrame,curr[4] + 0.05,curr[5]];
+         makeSolarPanel(curr[0], curr[1], panels[i][2], panels[i][3],panels[i][4]);
+         if (curr[3] <= contactDiv.offsetHeight*0.35 && curr[5] == 0) {
+            panels[i][5] = 1;
+            requestRandomPanel();
+         }
+         if (curr[3] <= -(contactDiv.offsetHeight*2)) {
+            panels.splice(i,1);
+         }
+      }
 
       window.requestAnimationFrame(draw);
    }
 
-   function drawSolarCell(x,y) {
+   function requestRandomPanel(offsetX=0,offsetY=0) {
+      let starter = startingCorners[currentStarter];
+      panels.push([(Math.floor(Math.random()*maxRow)+1),(Math.floor(Math.random()*maxCol)+1), ((contactDiv.offsetWidth * starter))-200,contactDiv.offsetHeight-offsetY-(Math.random()*100),0,0]);
+      currentStarter = currentStarter + 1;
+      if (currentStarter == startingCorners.length) { 
+         currentStarter = 0; 
+      }
+   }
+
+   function drawSolarCell(x : number, y : number) {
+      if (!ctx) { return }
+
+      let ci = cellInset * canvasResScale;
+      let cs = cellSize * canvasResScale;
+      
+
       ctx.fillStyle = cellInnerColor;
       ctx.beginPath();
-
-      ctx.moveTo(x+cellInset,y); // starting position (top left corner)
-      ctx.lineTo(x+cellInset+cellSize,y);  // top right edge
-      ctx.lineTo(x+(cellInset*2)+cellSize,y+cellInset); // top right inset
-      ctx.lineTo(x+(cellInset*2)+cellSize,y+cellInset+cellSize); // bottom right edge
-      ctx.lineTo(x+(cellInset)+cellSize,y+(cellInset*2)+cellSize); // bottom right inset
-      ctx.lineTo(x+cellInset, y+(cellInset*2)+cellSize); // bottom left edge
-      ctx.lineTo(x, y+cellInset+cellSize); // bottom left inset
-      ctx.lineTo(x,y+cellInset); // top left edge
-      ctx.lineTo(x+cellInset,y); // top left inset (ending position)
-
+      ctx.moveTo(x+ci,y); // starting position (top left corner)
+      ctx.lineTo(x+ci+cs,y);  // top right edge
+      ctx.lineTo(x+(ci*2)+cs,y+ci); // top right inset
+      ctx.lineTo(x+(ci*2)+cs,y+ci+cs); // bottom right edge
+      ctx.lineTo(x+(ci)+cs,y+(ci*2)+cs); // bottom right inset
+      ctx.lineTo(x+ci, y+(ci*2)+cs); // bottom left edge
+      ctx.lineTo(x, y+ci+cs); // bottom left inset
+      ctx.lineTo(x,y+ci); // top left edge
+      ctx.lineTo(x+ci,y); // top left inset (ending position)
       ctx.fill();
    }
    
-   function makeSolarPanel(r,c,x,y) {
+   function makeSolarPanel(r : number, c : number, x : number, y : number, alpha : number) {
+      if (!ctx) { return }
+
+      ctx.globalAlpha = alpha;
+
+      let ci = cellInset * canvasResScale;
+      let cs = cellSize * canvasResScale;
+      let pc = cellPadding * canvasResScale;
+
       x = x * canvasResScale;
       y = y * canvasResScale;
 
-      let panelWidth = (c * (cellSize + (cellInset*2) + cellPadding)) + cellPadding;
-      let panelHeight = (r * (cellSize + (cellInset*2) + cellPadding)) + cellPadding;
+      let panelWidth = ((c * (cellSize + (cellInset*2) + cellPadding)) + cellPadding) * canvasResScale;
+      let panelHeight = ((r * (cellSize + (cellInset*2) + cellPadding)) + cellPadding) * canvasResScale;
 
       // render cells
       for (let i = 0; i < r; ++i) {
          for (let j = 0; j < c; ++j) {
-            drawSolarCell(x+cellPadding + ((cellSize+(cellInset*2)+(cellPadding))*j),y+cellPadding + ((cellSize+(cellInset*2)+(cellPadding))*i));
+            drawSolarCell(x+pc + ((cs+(ci*2)+(pc))*j),y+pc + ((cs+(ci*2)+(pc))*i));
          }
       }
 
       // render a square
       ctx.fillStyle = cellOuterColor;
-      ctx.fillRect(x, y, panelWidth, panelHeight);
+      ctx.fillRect(x, y, panelWidth, panelHeight); 
    }
 
    $effect(()=>{
-      ctx = canvas.getContext("2d");
-      canvas.imageSmoothingEnabled = false;
+      if (canvas) {
+         ctx = canvas.getContext("2d");
+         for (let i = 0; i < startingCorners.length; ++i) { 
+            console.log("new one summoned");
+            requestRandomPanel(0,contactDiv.offsetHeight); 
+         }
+         window.requestAnimationFrame(draw);
+      } else {
+         console.error("Canvas not loaded");
+      }
 
-      window.requestAnimationFrame(draw);
+      
    })
 
 </script>
@@ -274,7 +328,7 @@
    <!-- Contact -->
    <div bind:this={contactDiv} class="overflow-hidden drop-shadow-2xl mt-140 solar-gradient sphere-mask h-150 sm:h-200">
       <!-- Solar panels -->
-      <canvas bind:this={canvas} class="absolute h-full w-full canvas-rendering"></canvas>
+      <canvas bind:this={canvas} class="opacity-25 absolute h-full w-full canvas-rendering"></canvas>
       <!-- Content -->
       <div class="z-2 pt-45 sm:pt-70 p-5 max-w-content m-auto drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black">
          <p class="w-full mb-0 sm;mb-5 text-5xl lg:text-7xl justify-center text-center p-10">
