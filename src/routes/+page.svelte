@@ -26,10 +26,11 @@
 
    // Work in progress!
    let contactDiv : HTMLDivElement;
+   let innerContactDiv : HTMLDivElement;
    let canvas : HTMLCanvasElement | null;
    let ctx : CanvasRenderingContext2D | null;
 
-   const canvasResScale = 2; // canvas resolution (1 - computed layout of contact div, 2 - twice as large, 0.5 - half as large)
+   const canvasResScale = 1; // canvas resolution (1 - computed layout of contact div, 2 - twice as large, 0.5 - half as large)
    const cellSize = 100;
    const cellPadding = 5;
    const cellInset = 15;
@@ -51,9 +52,9 @@
       if (!canvas || !ctx) { return }
 
       canvas.height = contactDiv.offsetHeight * canvasResScale;
-      canvas.width = contactDiv.offsetWidth * canvasResScale;
+      canvas.width = innerContactDiv.offsetWidth * canvasResScale;
       canvas.style.height = contactDiv.offsetHeight.toString() +"px";
-      canvas.style.width = contactDiv.offsetWidth.toString() +"px";
+      canvas.style.width = innerContactDiv.offsetWidth.toString() +"px";
       
       ctx.globalCompositeOperation = "destination-over";
       ctx.clearRect(0, 0, 300, 300); // clear canvas
@@ -139,7 +140,6 @@
       if (canvas) {
          ctx = canvas.getContext("2d");
          for (let i = 0; i < startingCorners.length; ++i) { 
-            console.log("new one summoned");
             requestRandomPanel(0,contactDiv.offsetHeight); 
          }
          window.requestAnimationFrame(draw);
@@ -161,7 +161,7 @@
       <video preload="metadata" class="absolute user-none w-full h-full object-cover brightness-50 overflow-hidden" autoplay muted loop>
          <source src="assets/solarsiteloop.webm" type="video/webm">
       </video>
-      <div class="absolute z-4 flex  h-full  w-full absolute max-w-content align-middle justify-center z-2  top-[50%] translate-y-[-50%] lg:translate-y-[-50%] m-auto">
+      <div class="absolute z-4 flex  h-full  w-full  max-w-content align-middle justify-center  top-[50%] translate-y-[-50%] lg:translate-y-[-50%] m-auto">
          <img class="hidden" src="assets/rscsplash.png" alt="Rutgers Solar Car Logo">
          <p class="self-center text-center  text-red font-sweetsquare font-black drop-shadow-logo text-4xl lg:text-5xl sm:text-5xl ">
             Making fast, sustainable, solar-powered cars
@@ -306,7 +306,7 @@
         </div>
         <div class="animate-driving-faster sm:animate-driving-normal relative bottom-11 z-2"><img src="assets/arctanarttransflip.webp" alt="Solar Car" style="width:80px;height:auto"></div>
       </div>
-      <div class="-mt-15 sm:-mt-5 p-10 self-center w-full flex flex-col sm:flex-row justify-center max-w-content">
+      <div bind:this={innerContactDiv} class="-mt-15 sm:-mt-5 p-10 self-center w-full flex flex-col sm:flex-row justify-center max-w-content">
          <div class="w-full flex flex-col">
             <p class="self-center text-2xl sm:text-4xl font-black text-red drop-shadow-small">
                Rutgers Solar Car competes at Formula Sun Gran Prix (FSGP), an annual event to compete for the most amount of laps in a solar-powered vehicle.
@@ -326,11 +326,11 @@
    </div>
 
    <!-- Contact -->
-   <div bind:this={contactDiv} class="overflow-hidden drop-shadow-2xl mt-140 solar-gradient sphere-mask h-150 sm:h-200">
+   <div bind:this={contactDiv} class="overflow-hidden flex justify-center drop-shadow-2xl mt-140 solar-gradient sphere-mask h-150 sm:h-200">
       <!-- Solar panels -->
-      <canvas bind:this={canvas} class="opacity-25 absolute h-full w-full canvas-rendering"></canvas>
+      <canvas bind:this={canvas} class="opacity-25 absolute h-full w-full canvas-rendering [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]"></canvas>
       <!-- Content -->
-      <div class="z-2 pt-45 sm:pt-70 p-5 max-w-content m-auto drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black">
+      <div  class="z-2 pt-45 sm:pt-45 p-5 max-w-content m-auto drop-shadow-small lg:drop-shadow-med text-white font-sweetsquare font-black">
          <p class="w-full mb-0 sm;mb-5 text-5xl lg:text-7xl justify-center text-center p-10">
             Contact Us
          </p>
