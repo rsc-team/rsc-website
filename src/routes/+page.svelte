@@ -158,7 +158,7 @@
    <div class="flex justify-center relative w-full h-150 lg:h-200 drop-shadow-lg">
       <div class="absolute z-3 w-full h-full solar-left-corner"></div>
       <div class="absolute z-2 user-none w-full h-full max-w-content"> </div>
-      <video preload="metadata" class="absolute user-none w-full h-full object-cover brightness-50 overflow-hidden" autoplay muted loop>
+      <video preload="metadata" playsinline class="absolute user-none w-full h-full object-cover brightness-50 overflow-hidden" autoplay muted loop>
          <source src="assets/solarsiteloop.webm" type="video/webm">
       </video>
       <div class="absolute z-4 flex  h-full  w-full  max-w-content align-middle justify-center  top-[50%] translate-y-[-50%] lg:translate-y-[-50%] m-auto">
