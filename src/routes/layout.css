@@ -23,6 +23,7 @@ body {
     /* Official RSC colors */
     --color-red: #cc1f36;
     --color-navy: #1e3554;
+    --color-navy-opaque: rgba(30,53,85,0.5);
     --color-gold: #e4ad23;
     --color-beige: #ebd8bc; 
     --color-shadow: #081b37;
@@ -64,6 +65,10 @@ body {
             transform: translateX(100%);
         }
     }
+}
+
+@utility burger-nav {
+    display:block
 }
 
 @utility solar-clip-rectangle {

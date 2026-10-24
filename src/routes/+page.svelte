@@ -1,3 +1,7 @@
+<!-----
+Home page
+------->
+
 <script lang="ts">
     import { createContext, createRawSnippet } from "svelte";
 
