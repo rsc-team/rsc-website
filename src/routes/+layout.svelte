@@ -31,9 +31,7 @@ Navigation bar
 	function clickedwindow(e:PointerEvent) {
 		if (e.target != null) {
 			let target : Element = e.target as Element
-			console.log(target.classList)
 			if ((cancelMenuTargets.includes(target.id) || target.classList.contains("navigation-button")) && burgermode) { 
-				console.log("traget oufn")
 				hamburger() 
 			}
 		}
@@ -74,7 +72,7 @@ Navigation bar
 	
 		<nav id="navmenu" bind:this={navbuttons} class="transition-all hidden sm:flex flex-1 m-auto align-middle content-center justify-center">
 			<Navlink label={"Team"} link={"/team"}></Navlink>
-			<Navlink label={"Join"} link={"/join"}></Navlink>
+			<!--<Navlink label={"Join"} link={"/join"}></Navlink>-->
 			<Navlink label={"Sponsors"} link={"/sponsors"}></Navlink>
 			<Navlink label={"Donate"} 
 			link={"https://give.rutgersfoundation.org/rutgers-solar-car-team/20133.html"} 
