@@ -32,6 +32,13 @@ body {
     --color-light-navy: #7289a8;
     --color-transparent-white: rgba(133,160,196,0.75);
 
+    /* Division colors */
+    --color-mech-blue: #2aa89e;
+    --color-elec-blue: #95c8ff;
+    --color-business-red: #bb5547;
+    --color-mfg-green: #2aa355;
+    --color-strat-purple: #9f81cc;
+
     /* Drop shadow */
     --drop-shadow-logo: -4px 4px 0px var(--color-shadow);
     --drop-shadow-med: -3px 3px 0px var(--color-shadow);
