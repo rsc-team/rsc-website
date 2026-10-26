@@ -28,7 +28,9 @@ Home page
       {url:"/collage/collage7.webp",alt:"Hyperion without canopy"}
    ]
 
-   // Work in progress!
+   let rur : HTMLSpanElement;
+   let ruu : HTMLSpanElement;
+
    let contactDiv : HTMLDivElement;
    let innerContactDiv : HTMLDivElement;
    let canvas : HTMLCanvasElement | null;
@@ -259,14 +261,14 @@ Home page
             <div class="scale-60 -m-10 sm:m-0 sm:scale-80 lg:scale-100 flex flex-row justify-center drop-shadow-none ">
                <div class="flex flex-col w-50 h-10 self-center mt-3.5">
                   <div class="w-full h-5 mb-2 bg-red drop-shadow-logo"></div>
-                  <div class="w-full h-5 bg-red drop-shadow-logo"></div>
+                  <div class="w-full h-5 bg-white drop-shadow-logo"></div>
                </div>
                <p class="text-red text-9xl mt-6  mb-10 select-none drop-shadow-logo">
                   66
                </p>
                <div class="flex flex-col w-50 h-10 self-center mt-3.5">
                   <div class="w-full h-5 mb-2 bg-red drop-shadow-logo"></div>
-                  <div class="w-full h-5 bg-red drop-shadow-logo"></div>
+                  <div class="w-full h-5 bg-white drop-shadow-logo"></div>
                </div>
             </div>
             <p class="">
@@ -369,14 +371,28 @@ Home page
    </div>
 
    <!-- Join Team -->
-    <div class="overflow-hidden h-50  bg-navy place-content-center flex drop-shadow-lg justify-center">
-      <div class="text-xl sm:text-2xl lg:text-4xl flex flex-col sm:flex-row max-w-content self-center font-black p-5 lg:p-20  text-white text-left drop-shadow-med">
-         <p class="text-gold text-center sm:ml-5 sm:text-left">Are you a student at Rutgers University? Help us design, build, and race the next generation of solar-powered vehicles!</p>
-         <a href="/join" class="mt-2 mb-8 sm:mt-0 sm:mb-0 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center ml-3  min-w-65">
+    <div class="overflow-hidden h-60  bg-navy place-content-center flex drop-shadow-lg justify-center">
+      <div class="text-xl sm:text-2xl lg:text-4xl flex flex-col max-w-content font-black pt-10  text-white text-left drop-shadow-med">
+         <p class="text-gold text-center pb-5">
+             <span class="group" on:mouseenter={() => {rur.innerHTML="&nbsp;&nbsp;R&nbsp;&nbsp;U&nbsp;&nbsp;"}}
+             on:mouseout={() => {rur.innerText="Are you"}}>
+                <span bind:this={rur} class="group group-hover:text-red">
+                   Are you 
+                 </span>
+            </span>
+            a student at Rutgers University? Help us design, build, and race the next generation of solar-powered vehicles!</p>
+         <div class="flex flex-row justify-center">
+            <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/ebJAgYCWuT" class="mt-2 mb-8 sm:mt-0 sm:mb-0 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center min-w-65">
                <button class=" hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
-                  <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Next Steps</p>
+                  <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Discord</p>
                </button>
             </a> 
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/rusolarcar" class="mt-2 mb-8 sm:mt-0 sm:mb-0 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center ml-8  min-w-65">
+               <button class=" hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
+                  <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Instagram</p>
+               </button>
+            </a> 
+         </div>
       </div>
    </div>
 
