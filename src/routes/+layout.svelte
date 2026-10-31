@@ -65,15 +65,15 @@ Navigation bar
 
 <div id="main-nav" bind:this={nav} class="transition-colors fixed z-100 w-full select-none justify-center align-middle flex h-20 ">
 	<nav class="z-100 select-none justify-between align-middle flex w-full max-w-content h-full">
-		<a href="/" class="absolute ml-5 flex-1 flex justify-center items-center h-full max-w-15">
+		<a href="/index" class="absolute ml-5 flex-1 flex justify-center items-center h-full max-w-15">
 			<img class="transition-all opacity-80 hover:opacity-100" src="/assets/solarlogo.svg" 
 			alt="Rutgers Solar Car Icon">
 		</a>
 	
 		<nav id="navmenu" bind:this={navbuttons} class="transition-all hidden sm:flex flex-1 m-auto align-middle content-center justify-center">
-			<Navlink label={"Team"} link={"/team"}></Navlink>
+			<Navlink label={"Team"} link={"rsc-website/team"}></Navlink>
 			<!--<Navlink label={"Join"} link={"/join"}></Navlink>-->
-			<Navlink label={"Sponsors"} link={"/sponsors"}></Navlink>
+			<Navlink label={"Sponsors"} link={"rsc-website/sponsors"}></Navlink>
 			<Navlink label={"Donate"} 
 			link={"https://give.rutgersfoundation.org/rutgers-solar-car-team/20133.html"} 
 			newtab={true}
