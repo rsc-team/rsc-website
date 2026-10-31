@@ -44,7 +44,9 @@ body {
     /* Drop shadow */
     --drop-shadow-logo: -4px 4px 0px var(--color-shadow);
     --drop-shadow-med: -3px 3px 0px var(--color-shadow);
+    --drop-shadow-med-diff: -3px 3px 0px var(--color-white);
     --drop-shadow-small: -2px 2px 0px var(--color-shadow);
+    --drop-shadow-small-diff: -2px 2px 0px var(--color-white);
     --drop-shadow-smaller: -1px 1px 0px var(--color-shadow);
 
     /* Layout Sizes */
