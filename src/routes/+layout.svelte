@@ -20,7 +20,7 @@
 <div id="main-nav" bind:this={nav} class="transition-colors fixed z-100 w-full select-none justify-center align-middle align-middle flex h-20 ">
 	<nav class="z-100  select-none justify-between align-middle flex w-full max-w-content h-full">
 		<a href="/" class="absolute ml-5 flex-1 flex justify-center items-center h-full max-w-15">
-			<img src="assets/solarlogo.svg" 
+			<img src="/assets/solarlogo.svg" 
 			alt="Rutgers Solar Car Icon">
 		</a>
 	
