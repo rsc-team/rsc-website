@@ -188,7 +188,7 @@ Home page
             <p>
                Our 100+ members from 15+ majors work across engineering, business, and strategy to build cars that are fast, sustainable, and ready to race.
             </p>
-            <a href="rsc-website/team" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-65">
+            <a href="team" class="mt-10 h-10 transition-all not-hover:drop-shadow-logo xl:order-3 self-center w-65">
                <button class=" hover:text-navy text-white  hover:bg-white cursor-pointer p-3 w-full font-black  bg-red text-4xl solar-clip-rectangle">
                   <p class="w-full h-full transition-all  group-hover:drop-shadow-med">Learn More</p>
                </button>
