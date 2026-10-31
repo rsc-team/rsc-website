@@ -23,6 +23,7 @@ body {
     /* Official RSC colors */
     --color-red: #cc1f36;
     --color-navy: #1e3554;
+    --color-navy-opaque: rgba(30,53,85,0.5);
     --color-gold: #e4ad23;
     --color-silver: #c8c8c8;
 <<<<<<< HEAD
@@ -34,21 +35,26 @@ body {
 
     /* Other (non-branded) colors */
     --color-light-navy: #7289a8;
+    --color-transparent-white: rgba(133,160,196,0.75);
+
+    /* Division colors */
+    --color-mech-blue: #2aa89e;
+    --color-elec-blue: #95c8ff;
+    --color-business-red: #bb5547;
+    --color-mfg-green: #2aa355;
+    --color-strat-purple: #9f81cc;
 
     /* Drop shadow */
-
     --drop-shadow-logo: -4px 4px 0px var(--color-shadow);
     --drop-shadow-med: -3px 3px 0px var(--color-shadow);
     --drop-shadow-small: -2px 2px 0px var(--color-shadow);
     --drop-shadow-smaller: -1px 1px 0px var(--color-shadow);
 
     /* Layout Sizes */
-
     --max-width-content: 1500px;
     --max-width-content-expanded: 1700px;
 
     /* Easing */
-
     --ease-frame: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     /* Animations */
@@ -71,6 +77,10 @@ body {
             transform: translateX(100%);
         }
     }
+}
+
+@utility burger-nav {
+    display:block
 }
 
 @utility solar-clip-rectangle {
@@ -104,11 +114,16 @@ body {
 }
 
 @utility nav-shadow {
-    --shadowed: rgba(0,0,0,0.8);
+    --shadowed: rgba(8,27,55,0.85);
 }
 
 @utility solar-gradient {
     background-image: linear-gradient(80deg,var(--color-navy) 0%, var(--color-light-navy) 100%);
+}
+
+@utility canvas-rendering {
+    width: 100%;
+    height: 100%;
 }
 
 @utility fade-out-div {
@@ -132,6 +147,6 @@ body {
 }
 
 #main-nav {
-    background-image: linear-gradient(var(--shadowed) 50%,transparent);
+    background-image: linear-gradient(var(--shadowed) 25%,transparent);
     transition: --shadowed 0.2s
 }
