@@ -333,7 +333,7 @@ Home page
    <!-- Where do we compete? -->
    <div class="absolute w-full overflow-hidden h-250 bg-beige flex-col flex">
       <div class="absolute w-full h-full bg-no-repeat bg-position-[50%_50%]  scale-150 bg-beige bg-blend-overlay  bg-[url(/assets/brainerd.svg)]"></div>
-      <p class="w-full lg:mb-20 text-4xl lg:text-6xl justify-center text-center p-10  drop-shadow-small-diff lg:drop-shadow-med-diff text-white font-sweetsquare font-black ">
+      <p class="w-full lg:mb-20 text-4xl lg:text-6xl justify-center text-center p-10 drop-shadow-2xl  text-white font-sweetsquare font-black ">
          <span class="text-navy">Where do we compete?</span>
       </p>
       <div class="" style="bottom:30%;width:120%">
@@ -345,7 +345,7 @@ Home page
       </div>
       <div bind:this={innerContactDiv} class="-mt-15 sm:-mt-5 p-10 self-center w-100 sm:w-320 flex flex-col sm:flex-row justify-center max-w-content">
          <div class="w-full flex flex-col">
-            <p class="self-center text-2xl sm:text-4xl font-black text-navy drop-shadow-small-diff">
+            <p class="self-center text-2xl sm:text-4xl font-black text-navy drop-shadow-2xl">
                Every summer, we race the Formula Sun Grand Prix, a 3-day track endurance event against 35+ teams. <br><br>Our next goal: the 2028 American Solar Challenge, a 1,700+ mile cross-country race along public roads.
             </p>
             <a target="_blank"
